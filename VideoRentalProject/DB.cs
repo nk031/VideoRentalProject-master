@@ -129,9 +129,22 @@ namespace VideoRentalProject
             Connection.Close();
         }
 
-        internal void ReturnMovie(object rMID)
+        public void ReturnMovie(object rMID)
         {
-            throw new NotImplementedException();
+
+            Connection.Open();
+
+            string query = "UPDATE RentedMovies set DateReturned=@DateReturned Where RMID = @RMID";
+
+            using (SqlCommand command = new SqlCommand(query, Connection))
+            {
+                command.Parameters.Add("@RMID", SqlDbType.NVarChar).Value = rMID;
+                command.Parameters.Add("@DateReturned", SqlDbType.DateTime).Value = DateTime.Now;
+
+                command.ExecuteNonQuery();
+            }
+
+            Connection.Close();
         }
 
         public string PopularCustomer()
@@ -185,22 +198,7 @@ namespace VideoRentalProject
             return result;
         }
 
-        public void ReturnMovie(object rmID)
-        {
-            Connection.Open();
-
-            string query = "UPDATE RentedMovies set DateReturned=@DateReturned Where RMID = @RMID";
-
-            using (SqlCommand command = new SqlCommand(query, Connection))
-            {
-                command.Parameters.Add("@RMID", SqlDbType.NVarChar).Value = rmID;
-                command.Parameters.Add("@DateReturned", SqlDbType.DateTime).Value = DateTime.Now;
-
-                command.ExecuteNonQuery();
-            }
-
-            Connection.Close();
-        }
+        
 
         public void IssueMovie(string movieIDFK, string custIDFK)
         {
