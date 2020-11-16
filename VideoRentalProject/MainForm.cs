@@ -100,5 +100,34 @@ namespace VideoRentalProject
         {
 
         }
+
+        private void IssueMovie_Click(object sender, EventArgs e)
+        {
+            Database.IssueMovie(MovieIDTBox.Text, CustIDTBox.Text);
+            LoadRentedMovie_Click(null, null);
+        }
+
+       
+
+        private void LoadRentedMovie_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReturnMovie_Click(object sender, EventArgs e)
+        {
+            Database.ReturnMovie(RMID);
+            LoadRentedMovie_Click(null, null);
+        }
+
+        private void PopularMovie_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Database.PopularMovie());
+        }
+
+        private void Popularcustomer_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Database.PopularCustomer());
+        }
     }
 }

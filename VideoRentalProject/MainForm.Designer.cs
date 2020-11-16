@@ -64,6 +64,10 @@
             this.GenreLabel = new System.Windows.Forms.Label();
             this.GenreTBox = new System.Windows.Forms.TextBox();
             this.LoadRentedMovie = new System.Windows.Forms.Button();
+            this.IssueMovie = new System.Windows.Forms.Button();
+            this.ReturnMovie = new System.Windows.Forms.Button();
+            this.PopularMovie = new System.Windows.Forms.Button();
+            this.Popularcustomer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -412,12 +416,61 @@
             this.LoadRentedMovie.TabIndex = 35;
             this.LoadRentedMovie.Text = "Load Rented Movies";
             this.LoadRentedMovie.UseVisualStyleBackColor = true;
+            this.LoadRentedMovie.Click += new System.EventHandler(this.LoadRentedMovie_Click);
+            // 
+            // IssueMovie
+            // 
+            this.IssueMovie.Location = new System.Drawing.Point(433, 18);
+            this.IssueMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.IssueMovie.Name = "IssueMovie";
+            this.IssueMovie.Size = new System.Drawing.Size(123, 83);
+            this.IssueMovie.TabIndex = 36;
+            this.IssueMovie.Text = "Issue Movie";
+            this.IssueMovie.UseVisualStyleBackColor = true;
+            this.IssueMovie.Click += new System.EventHandler(this.IssueMovie_Click);
+            // 
+            // ReturnMovie
+            // 
+            this.ReturnMovie.Location = new System.Drawing.Point(582, 18);
+            this.ReturnMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ReturnMovie.Name = "ReturnMovie";
+            this.ReturnMovie.Size = new System.Drawing.Size(123, 83);
+            this.ReturnMovie.TabIndex = 37;
+            this.ReturnMovie.Text = "Return Movie";
+            this.ReturnMovie.UseVisualStyleBackColor = true;
+            this.ReturnMovie.Click += new System.EventHandler(this.ReturnMovie_Click);
+            // 
+            // PopularMovie
+            // 
+            this.PopularMovie.Location = new System.Drawing.Point(835, 18);
+            this.PopularMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PopularMovie.Name = "PopularMovie";
+            this.PopularMovie.Size = new System.Drawing.Size(123, 83);
+            this.PopularMovie.TabIndex = 38;
+            this.PopularMovie.Text = "Popular Movie";
+            this.PopularMovie.UseVisualStyleBackColor = true;
+            this.PopularMovie.Click += new System.EventHandler(this.PopularMovie_Click);
+            // 
+            // Popularcustomer
+            // 
+            this.Popularcustomer.Location = new System.Drawing.Point(992, 18);
+            this.Popularcustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Popularcustomer.Name = "Popularcustomer";
+            this.Popularcustomer.Size = new System.Drawing.Size(123, 83);
+            this.Popularcustomer.TabIndex = 39;
+            this.Popularcustomer.Text = "Popular Customer";
+            this.Popularcustomer.UseVisualStyleBackColor = true;
+            this.Popularcustomer.Click += new System.EventHandler(this.Popularcustomer_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 867);
+            this.Controls.Add(this.Popularcustomer);
+            this.Controls.Add(this.PopularMovie);
+            this.Controls.Add(this.ReturnMovie);
+            this.Controls.Add(this.IssueMovie);
             this.Controls.Add(this.LoadRentedMovie);
             this.Controls.Add(this.GenreTBox);
             this.Controls.Add(this.GenreLabel);
@@ -501,6 +554,10 @@
         private System.Windows.Forms.Label GenreLabel;
         private System.Windows.Forms.TextBox GenreTBox;
         private System.Windows.Forms.Button LoadRentedMovie;
+        private System.Windows.Forms.Button IssueMovie;
+        private System.Windows.Forms.Button ReturnMovie;
+        private System.Windows.Forms.Button PopularMovie;
+        private System.Windows.Forms.Button Popularcustomer;
     }
 }
 

@@ -129,6 +129,98 @@ namespace VideoRentalProject
             Connection.Close();
         }
 
+        internal void ReturnMovie(object rMID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string PopularCustomer()
+        {
+            Connection.Open();
+
+            string query = "SELECT CustIDFK, COUNT(*) AS Rep FROM RentedMovies GROUP BY CustIDFK ORDER BY Rep DESC";
+
+            SqlCommand command = new SqlCommand(query, Connection);
+
+            var result = command.ExecuteScalar().ToString();
+
+            Connection.Close();
+
+            Connection.Open();
+
+            Console.WriteLine(result);
+
+            query = "SELECT FirstName, LastName FROM Customer WHERE CustID = " + result;
+
+            command = new SqlCommand(query, Connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            string output = "";
+
+            while (reader.Read())
+            {
+                output = reader["FirstName"].ToString();
+                output += " ";
+                output += reader["LastName"].ToString();
+            }
+
+            Connection.Close();
+
+            return output;
+        }
+
+        public string PopularMovie()
+        {
+            Connection.Open();
+
+            string query = "SELECT MovieIDFK, COUNT(*) AS Rep FROM RentedMovies GROUP BY MovieIDFK ORDER BY Rep DESC";
+
+            SqlCommand command = new SqlCommand(query, Connection);
+
+            var result = command.ExecuteScalar().ToString();
+
+            Connection.Close();
+
+            return result;
+        }
+
+        public void ReturnMovie(object rmID)
+        {
+            Connection.Open();
+
+            string query = "UPDATE RentedMovies set DateReturned=@DateReturned Where RMID = @RMID";
+
+            using (SqlCommand command = new SqlCommand(query, Connection))
+            {
+                command.Parameters.Add("@RMID", SqlDbType.NVarChar).Value = rmID;
+                command.Parameters.Add("@DateReturned", SqlDbType.DateTime).Value = DateTime.Now;
+
+                command.ExecuteNonQuery();
+            }
+
+            Connection.Close();
+        }
+
+        public void IssueMovie(string movieIDFK, string custIDFK)
+        {
+            Connection.Open();
+
+            string query = "INSERT INTO RentedMovies (MovieIDFK, CustIDFK, DateRented)" +
+                    "VALUES(@MovieIDFK, @CustIDFK, @DateRented)";
+
+            using (SqlCommand command = new SqlCommand(query, Connection))
+            {
+                command.Parameters.AddWithValue("@MovieIDFK", movieIDFK);
+                command.Parameters.AddWithValue("@CustIDFK", custIDFK);
+                command.Parameters.AddWithValue("@DateRented", DateTime.Now);
+
+                command.ExecuteNonQuery();
+            }
+
+            Connection.Close();
+        }
+
         public void AddMovie(string Rating, string Title, string Year, string Rental_Cost, string Copies, string Plot, string Genre)
         {
             Connection.Open();
