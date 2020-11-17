@@ -14,7 +14,7 @@ namespace VideoRentalProject
     public partial class MainForm : Form
     {
         DB Database = new DB();
-        string WhichButtonClicked = "";
+       
         string RMID = "";
 
         public MainForm()
