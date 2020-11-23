@@ -129,6 +129,41 @@ namespace VideoRentalProject
             Connection.Close();
         }
 
+        public DataTable LoadRentedMovie()
+        {
+            Connection.Open();
+
+            DataTable CustomersTable = new DataTable();
+
+            CustomersTable.Clear();
+
+            CustomersTable.Columns.Add("RMID");
+            CustomersTable.Columns.Add("MovieIDFK");
+            CustomersTable.Columns.Add("CustIDFK");
+            CustomersTable.Columns.Add("DateRented");
+            CustomersTable.Columns.Add("DateReturned");
+
+            string query = "SELECT * FROM RentedMovies";
+
+            SqlCommand command = new SqlCommand(query, Connection);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                CustomersTable.Rows.Add(
+                    reader["RMID"],
+                    reader["MovieIDFK"],
+                    reader["CustIDFK"],
+                    reader["DateRented"],
+                    reader["DateReturned"]
+                    );
+            }
+
+            Connection.Close();
+
+            return CustomersTable;
+        }
+
         public void ReturnMovie(object rMID)
         {
 
@@ -194,7 +229,6 @@ namespace VideoRentalProject
             var result = command.ExecuteScalar().ToString();
 
             Connection.Close();
-
             return result;
         }
 

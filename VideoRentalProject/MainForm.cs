@@ -111,9 +111,9 @@ namespace VideoRentalProject
 
        
 
-        private void LoadRentedMovie_Click(object sender, EventArgs e)
+        public void LoadRentedMovie_Click(object sender, EventArgs e)
         {
-
+            MainGrid.DataSource = Database.LoadRentedMovie();
         }
 
         private void ReturnMovie_Click(object sender, EventArgs e)

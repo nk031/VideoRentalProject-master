@@ -89,14 +89,14 @@
             this.MainGrid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MainGrid.Name = "MainGrid";
             this.MainGrid.RowHeadersWidth = 62;
-            this.MainGrid.Size = new System.Drawing.Size(981, 451);
+            this.MainGrid.Size = new System.Drawing.Size(1172, 451);
             this.MainGrid.TabIndex = 1;
             this.MainGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGrid_CellContentClick);
             this.MainGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MainGrid_CellContentClick_1);
             // 
             // LoadMovies
             // 
-            this.LoadMovies.Location = new System.Drawing.Point(150, 18);
+            this.LoadMovies.Location = new System.Drawing.Point(162, 18);
             this.LoadMovies.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoadMovies.Name = "LoadMovies";
             this.LoadMovies.Size = new System.Drawing.Size(123, 83);
@@ -409,7 +409,7 @@
             // 
             // LoadRentedMovie
             // 
-            this.LoadRentedMovie.Location = new System.Drawing.Point(281, 18);
+            this.LoadRentedMovie.Location = new System.Drawing.Point(302, 18);
             this.LoadRentedMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoadRentedMovie.Name = "LoadRentedMovie";
             this.LoadRentedMovie.Size = new System.Drawing.Size(123, 83);
@@ -420,7 +420,7 @@
             // 
             // IssueMovie
             // 
-            this.IssueMovie.Location = new System.Drawing.Point(530, 18);
+            this.IssueMovie.Location = new System.Drawing.Point(582, 14);
             this.IssueMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.IssueMovie.Name = "IssueMovie";
             this.IssueMovie.Size = new System.Drawing.Size(123, 83);
@@ -431,7 +431,7 @@
             // 
             // ReturnMovie
             // 
-            this.ReturnMovie.Location = new System.Drawing.Point(677, 18);
+            this.ReturnMovie.Location = new System.Drawing.Point(751, 14);
             this.ReturnMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ReturnMovie.Name = "ReturnMovie";
             this.ReturnMovie.Size = new System.Drawing.Size(123, 83);
@@ -442,7 +442,7 @@
             // 
             // PopularMovie
             // 
-            this.PopularMovie.Location = new System.Drawing.Point(835, 18);
+            this.PopularMovie.Location = new System.Drawing.Point(908, 14);
             this.PopularMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PopularMovie.Name = "PopularMovie";
             this.PopularMovie.Size = new System.Drawing.Size(123, 83);
@@ -453,7 +453,7 @@
             // 
             // Popularcustomer
             // 
-            this.Popularcustomer.Location = new System.Drawing.Point(992, 18);
+            this.Popularcustomer.Location = new System.Drawing.Point(1067, 14);
             this.Popularcustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Popularcustomer.Name = "Popularcustomer";
             this.Popularcustomer.Size = new System.Drawing.Size(123, 83);
