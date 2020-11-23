@@ -420,7 +420,7 @@
             // 
             // IssueMovie
             // 
-            this.IssueMovie.Location = new System.Drawing.Point(433, 18);
+            this.IssueMovie.Location = new System.Drawing.Point(530, 18);
             this.IssueMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.IssueMovie.Name = "IssueMovie";
             this.IssueMovie.Size = new System.Drawing.Size(123, 83);
@@ -431,7 +431,7 @@
             // 
             // ReturnMovie
             // 
-            this.ReturnMovie.Location = new System.Drawing.Point(582, 18);
+            this.ReturnMovie.Location = new System.Drawing.Point(677, 18);
             this.ReturnMovie.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ReturnMovie.Name = "ReturnMovie";
             this.ReturnMovie.Size = new System.Drawing.Size(123, 83);
